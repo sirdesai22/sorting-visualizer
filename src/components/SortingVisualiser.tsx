@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SettingsBar from "./SettingsBar";
 
-type Props = {};
-
-const SortingVisualiser = (props: Props) => {
+const SortingVisualiser = () => {
   const [array, setArray] = useState([]);
 
   const generateArray = (min: number, max: number) => {

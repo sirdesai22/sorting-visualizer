@@ -1,14 +1,11 @@
-import React from 'react'
-import SortingVisualiser from './components/SortingVisualiser'
+import SortingVisualiser from "./components/SortingVisualiser";
 
-type Props = {}
-
-const App = (props: Props) => {
+const App = () => {
   return (
     <div>
       <SortingVisualiser />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
