@@ -30,3 +30,7 @@ To run this project locally, follow these steps:
 
    npm start
    ```
+
+### Improvements
+- Stop user from running other algo when one is already running.
+- Enable refresh/stop button only when an algo is running.
