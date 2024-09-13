@@ -4,6 +4,7 @@ import getBubbleSort from "../hooks/algorithms/bubbleSort";
 import playBubbleSortAnimations from "../hooks/animations/bubbleSort";
 import playMergeSortAnimations from "../hooks/animations/mergeSort";
 import { IoMdRefresh } from "react-icons/io";
+import playQuickSortAnimations from "../hooks/animations/quickSort";
 
 type Props = {
   generateArray: Function;
@@ -23,21 +24,20 @@ const SettingsBar = ({ generateArray, array }: Props) => {
   const [speed, setSpeed] = useState(5);
   const [stop, setStop] = useState(true);
   const [running, setRunning] = useState(false);
-  
 
   const mergeSort = () => {
     setStop(false);
-    setRunning(true);
+    // setRunning(true);
     const animations = getMergeSort(array);
     playMergeSortAnimations(animations, speed);
     setStop(true);
   };
 
   const quickSort = () => {
-    // setStop(false);
-    // const animations = getMergeSort(array);
-    // playMergeSortAnimations(animations, speed);
-    // setStop(true);
+    setStop(false);
+    const animations = getMergeSort(array);
+    playQuickSortAnimations(animations, speed);
+    setStop(true);
   };
 
   const heapSort = () => {
@@ -57,7 +57,7 @@ const SettingsBar = ({ generateArray, array }: Props) => {
   return (
     <div className="p-3 bg-black text-white flex justify-evenly items-center">
       <h1 className="text-3xl font-bold">Sorting Visualizer</h1>
-      <div>
+      {/* <div>
         <p>Array Range</p>
         <input
           type="range"
@@ -70,7 +70,7 @@ const SettingsBar = ({ generateArray, array }: Props) => {
           }}
         />
         <span>{range}</span>
-      </div>
+      </div> */}
 
       <div>
         <p>Speed</p>
@@ -96,7 +96,7 @@ const SettingsBar = ({ generateArray, array }: Props) => {
       >
         Merge Sort
       </button>
-      <button
+      {/* <button
         className="focus:border-2 px-3 py-2 rounded-lg"
         disabled={running}
         onClick={() => {
@@ -104,8 +104,8 @@ const SettingsBar = ({ generateArray, array }: Props) => {
         }}
       >
         Quick Sort
-      </button>
-      <button
+      </button> */}
+      {/* <button
         className="focus:border-2 px-3 py-2 rounded-lg"
         disabled={running}
         onClick={() => {
@@ -113,7 +113,7 @@ const SettingsBar = ({ generateArray, array }: Props) => {
         }}
       >
         Heap Sort
-      </button>
+      </button> */}
       <button
         className="focus:border-2 px-3 py-2 rounded-lg"
         disabled={running}
@@ -133,7 +133,7 @@ const SettingsBar = ({ generateArray, array }: Props) => {
         >
           X
         </button> */}
-        <IoMdRefresh 
+        <IoMdRefresh
           className={`text-4xl ${
             stop ? "text-gray-600" : "text-red-600"
           } font-semibold mx-5 cursor-pointer`}
@@ -146,7 +146,8 @@ const SettingsBar = ({ generateArray, array }: Props) => {
         <button
           className="px-3 py-2 text-xl bg-blue-600 font-semibold rounded-xl"
           onClick={() => {
-            generateArray(5, range);
+            // generateArray(5, range);
+            window.location.reload();
           }}
         >
           Generate Array
