@@ -4,7 +4,7 @@ import getBubbleSort from "../hooks/algorithms/bubbleSort";
 import playBubbleSortAnimations from "../hooks/animations/bubbleSort";
 import playMergeSortAnimations from "../hooks/animations/mergeSort";
 import { IoMdRefresh } from "react-icons/io";
-import playQuickSortAnimations from "../hooks/animations/quickSort";
+// import playQuickSortAnimations from "../hooks/animations/quickSort";
 
 type Props = {
   generateArray: Function;
@@ -20,10 +20,10 @@ type Props = {
 // const SECONDARY_COLOR = "red";
 
 const SettingsBar = ({ generateArray, array }: Props) => {
-  const [range, setRange] = useState(500);
+  // const [range, setRange] = useState(500);
   const [speed, setSpeed] = useState(5);
   const [stop, setStop] = useState(true);
-  const [running, setRunning] = useState(false);
+  // const [running, setRunning] = useState(false);
 
   const mergeSort = () => {
     setStop(false);
@@ -33,19 +33,19 @@ const SettingsBar = ({ generateArray, array }: Props) => {
     setStop(true);
   };
 
-  const quickSort = () => {
-    setStop(false);
-    const animations = getMergeSort(array);
-    playQuickSortAnimations(animations, speed);
-    setStop(true);
-  };
+  // const quickSort = () => {
+  //   setStop(false);
+  //   const animations = getMergeSort(array);
+  //   playQuickSortAnimations(animations, speed);
+  //   setStop(true);
+  // };
 
-  const heapSort = () => {
-    // setStop(false);
-    // const animations = getMergeSort(array);
-    // playMergeSortAnimations(animations, speed);
-    // setStop(true);
-  };
+  // const heapSort = () => {
+  //   // setStop(false);
+  //   // const animations = getMergeSort(array);
+  //   // playMergeSortAnimations(animations, speed);
+  //   // setStop(true);
+  // };
 
   const bubbleSort = () => {
     setStop(false);
@@ -89,7 +89,7 @@ const SettingsBar = ({ generateArray, array }: Props) => {
 
       <button
         className="focus:border-2 px-3 py-2 rounded-lg"
-        disabled={running}
+        // disabled={running}
         onClick={() => {
           mergeSort();
         }}
@@ -116,7 +116,7 @@ const SettingsBar = ({ generateArray, array }: Props) => {
       </button> */}
       <button
         className="focus:border-2 px-3 py-2 rounded-lg"
-        disabled={running}
+        // disabled={running}
         onClick={() => {
           bubbleSort();
         }}
@@ -138,6 +138,7 @@ const SettingsBar = ({ generateArray, array }: Props) => {
             stop ? "text-gray-600" : "text-red-600"
           } font-semibold mx-5 cursor-pointer`}
           onClick={() => {
+            generateArray();
             window.location.reload();
           }}
           visibility={"stop"}
