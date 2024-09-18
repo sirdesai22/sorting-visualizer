@@ -24,7 +24,7 @@ const SortingVisualiser = () => {
       <SettingsBar generateArray={generateArray} array={array} />
       <div className="flex w-full justify-center gap-1">
         {array.map((ele, index) => (
-          <div className="bg-blue-500 w-2 array-bar" style={{height: `${ele}px`}} key={index}>
+          <div className="bg-blue-500 w-4 lg:w-2 array-bar" style={{height: `${ele}px`}} key={index}>
           </div>
         ))}
       </div>
